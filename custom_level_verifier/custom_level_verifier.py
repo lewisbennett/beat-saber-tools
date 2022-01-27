@@ -61,7 +61,7 @@ def is_level_available(level_hash):
     while (True):
 
         try:
-            response = requests.request("GET", "https://eu.cdn.beatsaver.com/{}.zip".format(level_hash))
+            response = requests.request("GET", "https://beatsaver.com/api/maps/hash/" + level_hash)
             break
 
         except:
@@ -120,7 +120,7 @@ def main():
             successes.append(custom_level + " (" + level_hash + ")")
 
         else:
-            print ("Custom level unavailable: " + custom_level)
+            print ("Custom level unavailable: " + custom_level + " (" + level_hash + ")")
 
             failures.append(custom_level + " (" + level_hash + ")")
 
